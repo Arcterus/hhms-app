@@ -1,0 +1,20 @@
+Dependencies
+------------
+C++ compiler	(mobile device version)
+libcurl 		(statically compiled version for mobile device)
+Xcode			(for iOS)
+Android SDK		(for Android)
+
+Build Instructions
+------------------
+Build hhms-lib:
+	make
+
+Build for iOS Simulator:
+	make ios-simulator
+
+Run on iOS Simulator
+	make ios-simulator-run
+
+Build for iOS Device:
+	make ios-device
