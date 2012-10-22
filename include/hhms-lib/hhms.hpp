@@ -20,13 +20,14 @@ class ClassTable {
 private:
     // int = period number, vector = assignments
     std::map<std::pair<int, std::string>, std::vector<Assignment> > table;
+
+    int download_file(const char *url, const char *output);
 public:
     void add_assignment(int period, Assignment assignment) throw(std::string);
     void add_class(int period, std::string name);
     std::pair<const std::pair<int, std::string>, std::vector<Assignment> > *find_class(int period) throw(std::string);
     Assignment get_assignment(int period, std::string name) throw(std::string);
+    bool load_data(std::string studentID);
 };
-
-int download_file(const char *url, const char *output);
 
 #endif

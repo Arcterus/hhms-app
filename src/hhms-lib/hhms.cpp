@@ -2,8 +2,10 @@
 #include <fstream>
 #include <string.h>
 #include <curl/curl.h>
+#include <sys/stat.h>
 #include "pugixml/pugixml.hpp"
 #include <hhms.hpp>
+#include <config.hpp>
 
 using namespace std;
 
@@ -59,7 +61,7 @@ Assignment ClassTable::get_assignment(int period, string name) throw(string) {
     throw name + " not found!";
 }
 
-int download_file(const char *url, const char *outputname) {
+int ClassTable::download_file(const char *url, const char *outputname) {
     CURLcode res = (CURLcode) 0;
     CURL *curl = curl_easy_init();
     if(curl) {
@@ -89,4 +91,14 @@ int download_file(const char *url, const char *outputname) {
     return (int) res;
 }
 
+bool ClassTable::load_data(string studentID) {
+    struct stat stat_info;
+    if(stat(
+#ifdef IOS
+            "Documents/"
+#endif
+            "data.xml", &stat_info)) {
 
+    }
+    return true;
+}
