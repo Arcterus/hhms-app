@@ -18,3 +18,7 @@ Run on iOS Simulator
 
 Build for iOS Device:
 	make ios-device
+
+License
+-------
+Please see the file LICENSE.  All files (minus files under the pugixml directory) use this license.
