@@ -3,12 +3,6 @@ all: hhms-lib
 BASE := "$(shell pwd)"
 CXXFLAGS += -I$(BASE)/include/hhms-lib
 
-ifndef APPNAME
-	APPNAME = *
-else
-	APPNAME = "$(APPNAME)"
-endif 
-
 PLATFORM_HEADERS = -I$(BASE)/include/ios
 ifeq ($(MAKECMDGOALS), android)
 	PLATFORM_HEADERS = -I$(BASE)/include/android
@@ -24,13 +18,19 @@ ios-simulator: hhms-lib
 	xcodebuild -sdk iphonesimulator
 
 ios-device: hhms-lib
-	xcodebuild -sdk iphone
+	xcodebuild -sdk iphoneos
 
-ios-run:
-	open "`locate Contents/MacOS/iPhone\ Simulator | sed -n 1p`" --args -SimulateApplication build/Release-iphonesimulator/$(APPNAME).app
+ios-simulator-run:
+	"`locate Contents/MacOS/iPhone\ Simulator | sed -n 1p`" -SimulateApplication \
+		build/Release-iphonesimulator/"Harker Homework Management System".app/"Harker Homework Management System"
+
+ios-device-install:
+	fruitstrap build/Release-iphoneos/"Harker Homework Management System".app
+
+ios-device-run:
+	fruitstrap -d build/Release-iphoneos/"Harker Homework Management System".app
 
 android: hhms-lib android-hhms-lib
 
 clean:
-	@echo "\nDo not worry about errors.\n"
-	rm -r src/{ios,android,hhms-lib}/*.{o,a} build
+	rm -r src/hhms-lib/*.{o,a} build

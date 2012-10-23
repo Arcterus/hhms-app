@@ -31,6 +31,7 @@
 		11290E3D162D10AE00E566D0 /* Harker_Homework_Management_SystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11290E3C162D10AE00E566D0 /* Harker_Homework_Management_SystemTests.m */; };
 		11290E48162D11A100E566D0 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11290E47162D11A100E566D0 /* ThirdViewController.m */; };
 		11290E4B162D13EB00E566D0 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11290E4A162D13EB00E566D0 /* FourthViewController.m */; };
+		1172500A16362ABD0075F878 /* hhms-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1172500916362ABD0075F878 /* hhms-lib.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		11290E47162D11A100E566D0 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdViewController.m; path = src/ios/ThirdViewController.m; sourceTree = "<group>"; };
 		11290E49162D13EB00E566D0 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FourthViewController.h; path = include/ios/FourthViewController.h; sourceTree = "<group>"; };
 		11290E4A162D13EB00E566D0 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FourthViewController.m; path = src/ios/FourthViewController.m; sourceTree = "<group>"; };
+		1172500916362ABD0075F878 /* hhms-lib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "hhms-lib.a"; path = "src/hhms-lib/hhms-lib.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1172500A16362ABD0075F878 /* hhms-lib.a in Frameworks */,
 				11290DFE162D10AE00E566D0 /* UIKit.framework in Frameworks */,
 				11290E00162D10AE00E566D0 /* Foundation.framework in Frameworks */,
 				11290E02162D10AE00E566D0 /* CoreGraphics.framework in Frameworks */,
@@ -106,6 +109,7 @@
 		11290DEE162D10AE00E566D0 = {
 			isa = PBXGroup;
 			children = (
+				1172500916362ABD0075F878 /* hhms-lib.a */,
 				11290E03162D10AE00E566D0 /* Harker Homework Management System */,
 				11290E35162D10AE00E566D0 /* Harker Homework Management SystemTests */,
 				11290DFC162D10AE00E566D0 /* Frameworks */,
@@ -424,6 +428,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "resource/ios/Harker Homework Management System-Prefix.pch";
 				INFOPLIST_FILE = "resource/ios/Harker Homework Management System-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/src/hhms-lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -435,6 +443,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "resource/ios/Harker Homework Management System-Prefix.pch";
 				INFOPLIST_FILE = "resource/ios/Harker Homework Management System-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/src/hhms-lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

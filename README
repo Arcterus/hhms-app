@@ -1,9 +1,10 @@
 Dependencies
 ------------
-C++ compiler	(mobile device version)
-libcurl 		(statically compiled version for mobile device)
-Xcode			(for iOS)
-Android SDK		(for Android)
+C++ compiler    (POSIX-compatible mobile device version)
+libcurl         (statically compiled version for mobile device)
+Xcode           (for iOS)
+fruitstrap      (only for deploying an iOS app to an iOS device)
+Android SDK     (for Android)
 
 Build Instructions
 ------------------
@@ -18,6 +19,12 @@ Run on iOS Simulator
 
 Build for iOS Device:
 	make ios-device
+
+Install on iOS Device:
+	make ios-device-install
+
+Run on iOS Device (with attached debugger):
+	make ios-device-run
 
 License
 -------
